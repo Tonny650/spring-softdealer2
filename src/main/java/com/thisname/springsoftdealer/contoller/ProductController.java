@@ -42,7 +42,7 @@ public class ProductController {
 
     @GetMapping("/create")
     public String crate(){
-        
+
         return "products/create";
     }
 

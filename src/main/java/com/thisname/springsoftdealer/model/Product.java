@@ -23,7 +23,11 @@ public class Product {
     @Getter @Setter
     private double price;
     @Getter @Setter
+    private double priceSupplier;
+    @Getter @Setter
     private int lot;
+    @Getter @Setter
+    private String iva;
 
     @ManyToOne
     @Getter @Setter
