@@ -1,0 +1,12 @@
+body {
+  padding-top: 56px;
+}
+.img-brand{
+  margin-left: -150px !important;
+  width: 80px;
+  margin-right: 250px;
+}
+.navbar-right{
+  margin-right: -150px !important;
+}
+
