@@ -14,9 +14,8 @@ import java.util.Date;
 public class Admin {
 
     @Id
-    @OneToOne
     @Getter @Setter
-    private User user;
+    private Integer user;
 
     @Getter @Setter
     private String accessLevel;
@@ -27,11 +26,9 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(User user, String accessLevel, Date time) {
+    public Admin(Integer user, String accessLevel, Date time) {
         this.user = user;
         this.accessLevel = accessLevel;
         this.time = time;
     }
-
-
 }

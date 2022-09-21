@@ -2,6 +2,7 @@ package com.thisname.springsoftdealer;
 
 import com.thisname.springsoftdealer.model.Order;
 import com.thisname.springsoftdealer.model.Product;
+import com.thisname.springsoftdealer.model.User;
 import com.thisname.springsoftdealer.service.IOrderService;
 import com.thisname.springsoftdealer.service.IUserService;
 import com.thisname.springsoftdealer.service.ProductService;
@@ -12,9 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -67,5 +70,15 @@ public class AdministratorCrontroller {
         return "administrator/detalleorden";
     }
 
+    @GetMapping("/access")
+    public String access(HttpSession session){
+        User user = iuserService.findById( Integer.parseInt(session.getAttribute("idUser").toString()) ).get();
+        int admin = 1;
+        if (admin >= 5){
+            return "redirect:http://localhost/phpmyadmin/index.php?route=/database/structure&db=softdealer";
+        }else {
+            return "administrator/accessDenied";
+        }
+    }
 
 }

@@ -41,14 +41,17 @@ public class Product {
     public Product() {
     }
 
-    public Product(Integer id, String name, String description, String image, double price, int lot, User user) {
+    public Product(Integer id, String name, String description, String image, double price, double priceSupplier, int lot, String iva, User user, Supplier supplier) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.image = image;
         this.price = price;
+        this.priceSupplier = priceSupplier;
         this.lot = lot;
+        this.iva = iva;
         this.user = user;
+        this.supplier = supplier;
     }
 
     @Override
@@ -59,7 +62,9 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
                 ", price=" + price +
+                ", priceSupplier=" + priceSupplier +
                 ", lot=" + lot +
+                ", iva='" + iva + '\'' +
                 '}';
     }
 }

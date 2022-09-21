@@ -39,9 +39,6 @@ public class User {
     @Getter @Setter
     private List<Order> orders ;
 
-    @OneToOne
-    @Getter @Setter
-    private Admin admin;
 
     public User() {
     }

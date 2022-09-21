@@ -1,6 +1,7 @@
 package com.thisname.springsoftdealer.contoller;
 
 import com.thisname.springsoftdealer.model.Product;
+import com.thisname.springsoftdealer.model.Supplier;
 import com.thisname.springsoftdealer.model.User;
 import com.thisname.springsoftdealer.service.IUserService;
 import com.thisname.springsoftdealer.service.ProductService;
@@ -52,6 +53,9 @@ public class ProductController {
 
         User user = iUserService.findById( Integer.parseInt(session.getAttribute("idUser").toString()) ).get();
         product.setUser(user);
+        Supplier supplier = new Supplier();
+        supplier.setId(1);
+        product.setSupplier(supplier);
 
         /**Images*/
         if (product.getId()==null){ //Cuando se crea un nuevo producto

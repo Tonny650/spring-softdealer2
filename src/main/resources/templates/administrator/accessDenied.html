@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Null Access</title>
+
+    <link rel="icon" th:href="@{/logo/Softlogo.png}">
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{css/heroic-features.css}" rel="stylesheet">
+</head>
+<body >
+
+<div style="display: flex;justify-content: center; align-items: center; margin-top: 40px">
+
+    <div style="background: lightgray; border-radius: 20px;border: black">
+        <div class="modal r" tabindex="-1" style="margin: 30px">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Access deneid</h1>
+                        <hr class="my-5">
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead">
+                            If you are seeing this page, it means that you do not have the necessary
+                            access to make that request to the server.<br>
+                            If you think this is a mistake?
+                        </p>
+
+                        <p class="lead">
+                            Please contact the owner of the e-Commerce.
+                        </p>
+
+                        <hr class="my-2">
+
+                        <button type="button" class="btn btn-dark" style="background: red; border-radius: 7px" onclick="window.close()"><p style="margin: 5px">Close tab</p></button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script th:src="@{vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
