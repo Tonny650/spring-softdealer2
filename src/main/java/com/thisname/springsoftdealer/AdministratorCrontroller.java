@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/administrator")
@@ -73,9 +74,19 @@ public class AdministratorCrontroller {
     @GetMapping("/access")
     public String access(HttpSession session){
         User user = iuserService.findById( Integer.parseInt(session.getAttribute("idUser").toString()) ).get();
-        int admin = 1;
+        int admin = 5;
         if (admin >= 5){
             return "redirect:http://localhost/phpmyadmin/index.php?route=/database/structure&db=softdealer";
+        }else {
+            return "administrator/accessDenied";
+        }
+    }
+
+    @GetMapping("admin")
+    public String admin(HttpSession session){
+        User user = iuserService.findById( Integer.parseInt(session.getAttribute("idUser").toString()) ).get();
+        if (user.getType().equals("ADMIN")){
+            return "redirect:/administrator";
         }else {
             return "administrator/accessDenied";
         }
